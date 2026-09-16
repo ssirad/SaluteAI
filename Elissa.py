@@ -21,8 +21,8 @@ def respond(input_text, name, topic_n):
             print(response)
             return input_text + '\n' + '*' + response + '*' + '\n' + patterns_responses(name)
             #salvare la risposta
-        else:
-            return str(input_text)
+    else:
+        return str(input_text)
 
 #questa parte dovrebbe essere inutile perchè non ci arriva mai,
 #se non trova unn pattern chiede le prossime domande... soprattutto perchè non può salvarle
