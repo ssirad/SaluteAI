@@ -41,9 +41,9 @@ def situation(name):
     if u_input2 == 'no':
         return u_input1
     elif u_input2 == 'yes':
-        print('what do you think trigged the fisrt time?')
+        print('what do you think trigged the fisrt time?') #i don't know why this can be useful
         u_input3 = input(name + ' > ')
-        return u_input1 + '\n' + u_input3
+        return u_input1 + '\n' + '*It happened multiple times during the day*' +'\n' + '*what do you think trigged the fisrt time?* ' + u_input3
     #return respond(u_input, name, topic_n=1),
 
 def thought(name):
@@ -72,7 +72,7 @@ def elissa():
                           EE      LL       II          SS         SS   AA    AA                      
                           EEEEEE  LLLLLL  IIII   SSSSSSS    SSSSSSS    AA    AA                      
     ''')
-    name = input("Hii, my name is Elissa."
+    name = input("Hii, my name is Elissa. \n"
                  "I'm going to be your personal assistant in the tracker application :), \n"
                  "let's fill together all that I need to track your symptoms... \n"
                  "I'm going to ask you some simple questions.\n"
