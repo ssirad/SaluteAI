@@ -26,10 +26,6 @@ patterns_symptoms = {
         'Do you have walking problems caused by the joint discomfort?' #da cambiare
         #others
     ],
-    r'.*(heart palpitations|racing heart|hearth racing|pounding heart|fluttering heart).*': [
-        'How long did the heart racing last?' #da cambiare
-        #others
-    ],
     r'.*(sweating|perspiration|hot flush|facial flushing|sudden warmth|cold sweat).*': [
         'How long did the perspiration was?' #da cambiare
         #others
@@ -42,7 +38,7 @@ patterns_symptoms = {
         'How long did the heart racing last?' #da cambiare
         #others
     ],
-
+#DA FINIRE ANCORA NE MANCANO UN PO - PRENDI LE COSE DA SCRIVERE DA QUA https://chatgpt.com/c/6aa941cc-376c-83eb-bbd9-c97d72cb2175
 }
 patterns_situations = {
     r'.*(headache).*': [
