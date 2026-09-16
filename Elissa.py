@@ -20,22 +20,9 @@ def respond(input_text, name, topic_n):
             response = random.choice(responses)
             print(response)
             return input_text + '\n' + '*' + response + '*' + '\n' + patterns_responses(name)
-            #salvare la risposta
+            #saving the answer
     else:
         return str(input_text)
-
-#questa parte dovrebbe essere inutile perchè non ci arriva mai,
-#se non trova unn pattern chiede le prossime domande... soprattutto perchè non può salvarle
-'''
-else:
-    q = input_text.split(' ')
-    for word in q:
-        if word in patterns[topic_n]:
-            return 'Can you describe the {}'.format(word)
-            #salvare la risposta
-    print('thank you for sharing your feelings about this...') #da cambiare
-'''
-
 
 def patterns_responses(name):
         u_input = input(name + ' > ')
@@ -47,9 +34,9 @@ def symptoms(name):
     return respond(u_input, name, topic_n=0)
 
 def situation(name):
-    print("In what situation does the symptom took place?") #da cambiare
+    print("In what situation does the symptom took place?") #change
     u_input1 = input(name + ' > ')
-    print("Did it happened multiple times today?")
+    print("Did it happened multiple times today? (yes or no) ")
     u_input2 = input(name + ' > ')
     if u_input2 == 'no':
         return u_input1
@@ -57,7 +44,6 @@ def situation(name):
         print('what do you think trigged the fisrt time?')
         u_input3 = input(name + ' > ')
         return u_input1 + '\n' + u_input3
-    #non serve ma se serve è per predirre situazioni
     #return respond(u_input, name, topic_n=1),
 
 def thought(name):
@@ -70,7 +56,7 @@ def thought(name):
         print('what were you thinking in the moment of the symptom?')
         u_input1 = input(name + ' > ')
         return respond(u_input, name, topic_n=1) + '\n' + u_input1
-    #non serve ma se serve è per predirre situazioni
+    #predict situations?
     #return respond(u_input, name, topic_n=2)
 
 def emotions(name):
@@ -98,22 +84,29 @@ def elissa():
         q2 = situation(name)
         q3 = thought(name)
         q4 = emotions(name)
-        q = input('Do you want to add another symptom? (yes or no)')
-        if q == 'no':
+        q = input('Do you want to add another symptom? (yes or no) ')
+        if q == 'no'or q != 'yes':
             break
-        elif q != 'yes:':
-            print('You did not answer, it is an yes or no question')
     final_q = input('Almost finished :) \nIf you want to add somthing: a thought or something that made you smile today you, can write it here below: \n')
     for _ in range(n):
         recap(q1, q2, q3, q4)
     print('*PERSONAL SPACE*', '\n', final_q)
 
 def recap(symptoms, situations, thought, emotions):
-    #qua mi serve che riprendo tutte le cose ma prima devo salvarle e poi fare un recap di tutto così posso metterla a postp e salvarla da qualche parte con un return
+    #i need the recap so i can know what it's saved and what not. Those are the saved data that we will put in the tracker
 
-    print('RECAP* \n'
-          '*SYMPTOMS*', '\n', symptoms, '\n',
-          '*SITUATIONS*', '\n', situations, '\n',
-          '*TOUGHTS*', '\n', thought, '\n',
-          '*FEELINGS*', '\n', emotions, '\n')
+    print('*RECAP* \n'
+          '*SYMPTOMS* --> ', symptoms, '\n',
+          '*SITUATIONS* --> ', situations, '\n',
+          '*TOUGHTS* --> ', thought, '\n',
+          '*FEELINGS* --> ', emotions, '\n')
 elissa()
+
+
+'''
+NOTES - things to change still
+- what do you think trigged the fisrt time? ---> I don't think that we need this bc you are describing it right after
+- still not saving everything in recap - question in thoughts() and situations()
+- emotions not finished
+- patterns not nearly finished
+'''
