@@ -40,19 +40,3 @@ patterns_symptoms = {
     ],
 #SILL HAVE TO PUT PATTERNS - https://chatgpt.com/c/6aa941cc-376c-83eb-bbd9-c97d72cb2175
 }
-patterns_situations = {
-    r'.*(headache).*': [
-        'risposta del mal di testa' #change
-    ],
-    r'.*(stomach pain).*': [
-        'risposta del mal di stomaco' #change
-    ]}
-
-patterns_emotions = {
-    r'.*(sad|sadness|blue).*': [
-        'would you say that you are only sad or there are more emotions? if yes what emotions are you feeling?' #change
-    ],
-    r'.*(angry|angriness|rage).*': [
-        'would you say that you are only angry or there are more emotions? if yes what emotions are you feeling?' #change
-    ]
-} #not finished
